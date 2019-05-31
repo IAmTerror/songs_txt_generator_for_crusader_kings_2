@@ -36,7 +36,7 @@ import os
 
 # VARIABLES ------------------------------------------------------------------------------------------------------------
 
-pathToScan = "/media/cyril/Windows/Users/cyril/Documents/Paradox Interactive/Crusader Kings II/mod/A Game of Thrones/music"
+pathToScan = ""
 songsTxtFileName = "songs.txt"
 
 
@@ -67,9 +67,10 @@ def parse_dirs(path):
     nb_files_name = 0  # Debug stuff
     for root, dirs, files in os.walk(path):
         for fileName in files:
-            nb_files_name += 1
-            print("DEBUG - nom du fichier : " + fileName)
-            file_write_from_songs_txt_pattern(fileName)
+            if fileName != "songs.txt":
+                nb_files_name += 1
+                print("DEBUG - nom du fichier : " + fileName)
+                file_write_from_songs_txt_pattern(fileName)
     print("DEBUG - nombre de fichiers ajoutés a songs.txt : " + str(nb_files_name))
 
 
