@@ -57,6 +57,8 @@ def file_write_from_songs_txt_pattern(a_file_name):
     file.write('\n')
     file.write('        }')
     file.write('\n')
+    file.write('        volume = 0.48')
+    file.write('\n')
     file.write('}')
     file.write('\n')
     file.write('\n')
